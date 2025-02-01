@@ -1,0 +1,9 @@
+// Map the original library theming to the Spirit design tokens.
+@forward 'theme/spirit';
+
+// Override the original library styles to mimic the Spirit components.
+@forward 'style/buttons';
+@forward 'style/consent-modal';
+@forward 'style/links';
+@forward 'style/preferences-modal';
+@forward 'style/toggles';

@@ -1,6 +1,0 @@
-/* stylelint-disable selector-id-pattern */
-#cc--main {
-    // Use maximum permissible value for `z-index` to overlap UI of other third-party plugins. Sorry!
-    // stylelint-disable-next-line declaration-no-important -- Override inline style injected by original library.
-    z-index: 2147483647 !important;
-}
