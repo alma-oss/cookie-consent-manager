@@ -157,7 +157,7 @@ See readme for [callbacks documentation](README.md#callbacks).
 
 ## Theming changes and Spirit Design System upgrade
 
-...
+TODO
 
 See readme for [full theming documentation](README.md#theming).
 

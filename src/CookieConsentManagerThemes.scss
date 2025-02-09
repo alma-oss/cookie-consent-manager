@@ -4,8 +4,5 @@
  * Licensed under MIT (https://github.com/alma-oss/cookie-consent-manager/blob/main/LICENSE.md)
  */
 
-// Vanilla Cookie Consent CSS by Orest Bida.
-@forward 'vanilla-cookieconsent/dist/cookieconsent.css';
-
-// Alma Career Cookie Consent Manager CSS by Alma Career.
-@forward 'scss/main';
+// LOADING THIS FILE IS OPTIONAL. Only use if your project is NOT built with Spirit Design System.
+@forward 'scss/themes';

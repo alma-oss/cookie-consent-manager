@@ -1,0 +1,19 @@
+// Breakpoint tools inspired by the `spirit-web` package
+// @see https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/tools/_breakpoint.scss
+
+// Mixin to get the width media query for a breakpoint value in up direction.
+//
+// Example: up(0) { … } will return …
+// Example: up(768px) { … } will return @media (width >= 768px) { … }
+//
+// Parameters are:
+// * $breakpoint-value: the breakpoint value (in pixels)
+@mixin up($breakpoint-value) {
+    @if $breakpoint-value > 0 {
+        @media (width >= $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

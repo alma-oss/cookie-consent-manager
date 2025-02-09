@@ -477,11 +477,11 @@ Start local development server:
 yarn start
 ```
 
-This will make the development server accessible http://localhost:3000/ .
+This will make the development server accessible http://localhost:5173/ .
 
-* The library with init function is served on: http://localhost:3000/dist/init.js
-* Javascript module: http://localhost:3000/dist/CookieConsentManager.js
-* CSS: http://localhost:3000/dist/CookieConsentManager.css
+* The library with init function is served on: http://localhost:5173/dist/init.js
+* Javascript module: http://localhost:5173/dist/CookieConsentManager.js
+* CSS: http://localhost:5173/dist/CookieConsentManager.css
 
 ### Contributing
 
