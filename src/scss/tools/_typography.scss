@@ -4,7 +4,6 @@
 // 1. Intentionally leaving out the `font-family` property to allow theming.
 
 @use 'sass:map';
-@use 'sass:string';
 @use 'breakpoint';
 @use '@tokens' as tokens;
 
