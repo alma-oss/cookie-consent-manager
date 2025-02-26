@@ -1,45 +1,15 @@
 {
   "extends": [
-    "config:recommended",
-    ":pinOnlyDevDependencies",
-    "helpers:pinGitHubActionDigests"
+    "local>alma-oss/renovate-config",
+    "local>alma-oss/renovate-config:scheduleWeeklyBusinessHours",
+    "local>alma-oss/renovate-config:groupMajorProdDependencies(npm)",
+    "local>alma-oss/renovate-config:groupNonMajorProdDependencies(npm)",
+    "local>alma-oss/renovate-config:groupAllDevDependencies(npm)",
+    ":dependencyDashboard"
   ],
-  "ignorePresets": [
-    "group:monorepos",
-    "group:recommended",
-    ":prHourlyLimit2"
-  ],
-  "baseBranches": ["main"],
   "enabledManagers": ["npm", "github-actions"],
-  "branchPrefix": "dependencies/",
   "commitMessagePrefix": "Deps: ",
-  "labels": ["dependencies"],
-  "schedule": ["after 9am and before 5pm on Monday"],
   "packageRules": [
-    {
-      "groupName": "major prod dependencies",
-      "groupSlug": "major-prod",
-      "matchManagers": ["npm"],
-      "matchUpdateTypes": ["major"],
-      "matchDepTypes": ["dependencies"],
-      "matchPackageNames": ["*"]
-    },
-    {
-      "groupName": "non-major prod dependencies",
-      "groupSlug": "non-major-prod",
-      "matchManagers": ["npm"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchDepTypes": ["dependencies"],
-      "matchPackageNames": ["*"]
-    },
-    {
-      "groupName": "all dev dependencies",
-      "groupSlug": "all-dev",
-      "separateMajorMinor": false,
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["devDependencies"],
-      "matchPackageNames": ["*"]
-    },
     {
       "groupName": "Freeze eslint on ^8",
       "description": "Lock eslint on ^8 until @lmc-eu/eslint-config-base is compatible with eslint 9",
