@@ -53,6 +53,13 @@
       "matchManagers": ["npm"],
       "matchPackageNames": ["conventional-changelog-cli"],
       "allowedVersions": "^3"
+    },
+    {
+      "groupName": "Temporarily froze stylelint config on 9.0.*",
+      "description": "@almacareer/stylelint-config in version 9.1+ is failing",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["@almacareer/stylelint-config"],
+      "allowedVersions": "<9.1.0"
     }
   ]
 }
