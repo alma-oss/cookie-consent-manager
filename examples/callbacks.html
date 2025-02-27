@@ -10,142 +10,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Cookie Consent Manager – callbacks example">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@3/css/themes.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@3/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@3/css/components.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@3/css/helpers.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@3/css/utilities.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="./assets/examples.css"><!-- This CSS is here for the purpose of this demo only, don't add it to your project -->
+    <script src="https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@3/js/bundle/spirit-web.bundle.min.js" async></script>
     <script src="./assets/functions.js" defer></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
 
     <link rel="stylesheet" href="../dist/CookieConsentManager.min.css"><!-- You will load this from CDN instead -->
-    <link rel="stylesheet" href="../dist/CookieConsentManagerThemes.min.css"><!-- You will load this from CDN instead. Only use when your project is NOT built with Spirit Design System or you use Spirit Design System version 2 or lower. -->
-
-    <!-- This is only for purposes of this example page -->
-    <style>
-        .list-callbacks .list-group-item-success:after {
-            content: ' – called';
-        }
-        .list-categories .list-group-item-success:after {
-            content: ' – allowed';
-        }
-    </style>
 </head>
 <body>
 <script type="module" src="/src/init.ts"></script>
 
-<header class="container">
-    <div class="d-flex flex-column align-items-center flex-md-row py-3">
-        <a href="." class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <svg class="me-3" width="126" height="46" viewBox="0 0 126 46">
-                <path style="fill:#fff;stroke:#fff;stroke-width:.473884" d="M.2.2h125.3v45.5H.2z"/>
-                <g transform="translate(-12.2 -12.3) scale(.26376)">
-                    <path d="M160.4 46.5h-82a32 32 0 0 0-32 32v83a32 32 0 0 0 32 32h29.1a66.8 66.8 0 0 1 16.5 2.7l1.5.4.4.1h.2l.5.2 1.8.7 6.6 2.4 20.5 7.4 35.6 13 1.4.5V78.5a32.1 32.1 0 0 0-32.1-32z"/>
-                    <path d="M284.7 115c.6 1.6 1.1 2.5 1.5 3.3.4.7 1.1 1.5 2 2.4.9.9 2.3 1.8 4.1 2.8v.6h-30.7v-.6c2.4-1.2 4.1-2.2 5.1-3.1.9-.9 1.4-1.9 1.4-3.1 0-1.2-.5-3.1-1.5-5.9l-3.4-9.2h-21.3l-.8 2.1a45 45 0 0 0-2.9 11c0 1.8.6 3.2 1.7 4.4 1.1 1.2 3 2.5 5.7 3.8v.6h-20v-.6a31 31 0 0 0 7.2-7.5c1.5-2.4 3.2-6.1 5.1-11.2l13.2-35.6-3.4-6.4a63.8 63.8 0 0 0 14.1-6.9zm-23.2-17.3-9.1-24.9-9 24.9z"/>
-                    <path d="M293.8 123.5c2.4-1.2 3.9-2.4 4.6-3.5.6-1.1 1-3.3 1-6.6V71.9c0-2.9-.2-5.2-.6-6.7-.4-1.5-.9-2.6-1.5-3.1l-3.4-2.5V59c7-.5 13.7-1.7 20-3.5v57.9c0 3.3.3 5.5 1 6.6.7 1.1 2.2 2.3 4.5 3.5v.6h-25.6z"/>
-                    <path d="M398.7 113.3c0 3.3.3 5.5 1 6.6.7 1.1 2.2 2.3 4.6 3.5v.6h-25.6v-.6c2.5-1.3 4.1-2.5 4.7-3.6.6-1.1 1-3.3 1.1-6.5l.1-19c0-2.8-.7-4.9-2-6.4a6.4 6.4 0 0 0-4.8-2.2c-3 0-5.7 1.9-8 5.6v21.9c0 3.3.3 5.5 1 6.6.6 1.1 2.2 2.3 4.6 3.5v.6h-25.6v-.4a12 12 0 0 0 4.7-3.5c.7-1.1 1.1-3.3 1.1-6.6l.1-13.5a30 30 0 0 0-1.4-11.2c-.9-1.9-2.6-2.8-5-2.8-3.4 0-6.3 1.9-8.6 5.7v21.8c0 3.3.3 5.5 1 6.6.6 1.1 2.1 2.3 4.4 3.5v.6h-25.5v-.6c2.4-1.2 3.9-2.4 4.6-3.5.6-1.1 1-3.3 1-6.6V94.7c0-4-.3-6.7-1-8.1-.7-1.3-2.2-2.7-4.6-4.1v-.6c6.4-.4 13-1.5 19.7-3.5v10c4.1-6.5 9.4-9.8 15.8-9.8 2.8 0 5.5.8 8.2 2.3a11 11 0 0 1 5.1 7.5c4.2-6.5 9.5-9.8 15.9-9.8a17.2 17.2 0 0 1 8.8 2.7c1.4.9 2.6 2.3 3.6 4.2.9 1.9 1.4 4.1 1.4 6.7z"/>
-                    <path d="M445.8 125.3c-3.4 0-5.7-1-7-3-1.3-2-1.9-4.3-1.8-6.8h-.1a18.5 18.5 0 0 1-6.4 6.7 18.1 18.1 0 0 1-10.1 2.9c-3.8 0-6.9-1-9.2-3a9.6 9.6 0 0 1-3.5-7.6c0-4.5 2.5-8.3 7.6-11.4 5-3.1 12.3-5.8 21.8-8.2l.2-7.3c0-1.8-.4-3.3-1.2-4.7-.9-1.3-2.3-2-4.1-2-2.8 0-5.1 1.5-6.7 4.4-1.7 3-2.8 6.5-3.4 10.5l-.5.1-10-5.9a21 21 0 0 1 8.2-8c3.8-2.2 8.5-3.4 14.1-3.4 3.6 0 6.5.5 9 1.4 2.4.9 4.2 2.2 5.4 3.9a19 19 0 0 1 2.4 5c.4 1.7.6 3.5.6 5.4l-.5 21.8c0 2 .7 3 2.3 3 1.7 0 3.1-1.2 4.1-3.6l.8.4a14 14 0 0 1-4.3 6.4 12 12 0 0 1-7.7 3zm-17.5-7.9c3 0 5.8-1.5 8.3-4.6l.4-16c-9.5 2.9-14.3 7.4-14.3 13.6 0 2.2.5 3.9 1.6 5.1 1 1.3 2.4 1.9 4 1.9z"/>
-                    <path d="M260.7 148.2c-4.3 0-8 2.6-11.3 7.8a42 42 0 0 0-5 23c0 10.2 1.7 18.3 5.1 23.7 3.4 5.4 7.3 8.1 11.6 8.1 3.6 0 7.4-1.8 11.3-5.6 4-3.7 7.6-8.2 11.1-13.4h.6l-1.9 18.7c-7.3 2-14.6 3.1-21.8 3.1-4.5 0-8.7-.6-12.6-1.9a33.2 33.2 0 0 1-10.6-5.8 26.5 26.5 0 0 1-7.4-10.5 39.5 39.5 0 0 1-2.7-15.1c0-11 3.1-19.6 9.4-25.7a33.1 33.1 0 0 1 24.1-9.1c6 0 13.2 1 21.6 3.1l1.9 18.4h-.6c-8.5-12.5-16-18.7-22.5-18.7h-.3z"/>
-                    <path d="M327.8 213.4c-3.4 0-5.7-1-7-3-1.3-2-1.9-4.3-1.8-6.8h-.1a18.5 18.5 0 0 1-6.4 6.7 18.1 18.1 0 0 1-10.1 2.9c-3.8 0-6.9-1-9.2-3a9.6 9.6 0 0 1-3.5-7.6c0-4.5 2.5-8.3 7.6-11.4 5-3.1 12.3-5.8 21.8-8.2l.2-7.3c0-1.8-.4-3.3-1.2-4.7-.9-1.3-2.3-2-4.1-2-2.8 0-5.1 1.5-6.7 4.4-1.7 3-2.8 6.5-3.4 10.5l-.5.1-10-5.9a21 21 0 0 1 8.2-8c3.8-2.2 8.5-3.4 14.1-3.4 3.6 0 6.5.5 9 1.4 2.5.9 4.2 2.2 5.4 3.9a19 19 0 0 1 2.4 5c.4 1.7.6 3.5.6 5.4l-.5 21.8c0 2 .7 3 2.3 3 1.7 0 3.1-1.2 4.1-3.6l.8.4a14 14 0 0 1-4.3 6.4c-2 1.8-4.3 2.9-7.4 2.9zm-17.5-7.8c3 0 5.8-1.5 8.3-4.6l.4-16c-9.5 2.9-14.3 7.4-14.3 13.6 0 2.2.5 3.9 1.6 5.1a5.5 5.5 0 0 0 4 1.9z"/>
-                    <path d="M340.4 211.7c2.4-1.2 3.9-2.4 4.6-3.5.6-1.1 1-3.3 1-6.6v-19.5c0-3.5-.3-6-1-7.4-.7-1.4-2.2-2.7-4.6-4v-.6a86 86 0 0 0 19.7-3.5l-.2 9.2h.2c.8-2.3 2.3-4.4 4.6-6.2a12.4 12.4 0 0 1 12.8-1.8l-1.9 14.7h-.6c-4-5-7.3-7.5-10-7.5-1.9 0-3.5 1.1-4.5 3.4v23.1c0 3.3.4 5.5 1.2 6.6.8 1.1 2.8 2.3 5.9 3.5v.6h-27.3z"/>
-                    <path d="M422.9 196.4a28.7 28.7 0 0 1-4.9 10.4 14.5 14.5 0 0 1-6.1 4.6 21.7 21.7 0 0 1-9.1 1.8c-6.7 0-12.3-2.1-16.8-6.3a21.9 21.9 0 0 1-6.7-16.8c0-7 2.2-12.5 6.5-16.8a23 23 0 0 1 16.9-6.5c3.6 0 6.8.6 9.5 1.9 2.8 1.3 4.8 2.8 6.3 4.7 1.4 1.9 2.5 3.7 3.1 5.5.6 1.8 1 3.5 1 5.1v1.1h-30.2v1.3c0 5.8 1.7 10.2 4.9 13 3.3 2.8 7.2 4.3 11.7 4.3 6.1 0 10.5-2.5 13.1-7.5zm-21.8-27.3c-2.4 0-4.4 1.2-5.8 3.6a22.1 22.1 0 0 0-2.7 10.1l16.9-.2a27.1 27.1 0 0 0-1.6-8.3 9.2 9.2 0 0 0-2.6-3.7 6.6 6.6 0 0 0-4.2-1.5z"/>
-                    <path d="M470.6 196.4a28.7 28.7 0 0 1-4.9 10.4 14.5 14.5 0 0 1-6.1 4.6 21.7 21.7 0 0 1-9.1 1.8c-6.7 0-12.3-2.1-16.8-6.3a21.9 21.9 0 0 1-6.7-16.8c0-7 2.2-12.5 6.5-16.8a23 23 0 0 1 16.9-6.5c3.6 0 6.8.6 9.5 1.9 2.8 1.3 4.8 2.8 6.3 4.7 1.4 1.9 2.5 3.7 3.1 5.5.6 1.8 1 3.5 1 5.1v1.1h-30.2v1.3c0 5.8 1.7 10.2 4.9 13 3.3 2.8 7.2 4.3 11.7 4.3 6.1 0 10.5-2.5 13.1-7.5zm-21.7-27.3c-2.4 0-4.4 1.2-5.8 3.6a22.1 22.1 0 0 0-2.7 10.1l16.9-.2a27.1 27.1 0 0 0-1.6-8.3 9.2 9.2 0 0 0-2.6-3.7 6.8 6.8 0 0 0-4.2-1.5z"/>
-                    <path d="M473.1 211.7c2.4-1.2 3.9-2.4 4.6-3.5.6-1.1 1-3.3 1-6.6v-19.5c0-3.5-.3-6-1-7.4-.7-1.4-2.2-2.7-4.6-4v-.6a86 86 0 0 0 19.7-3.5l-.2 9.2h.2c.8-2.3 2.4-4.4 4.6-6.2a12.4 12.4 0 0 1 12.8-1.8l-1.9 14.7h-.6c-4-5-7.3-7.5-10-7.5-1.9 0-3.5 1.1-4.5 3.4v23.1c0 3.3.4 5.5 1.2 6.6.8 1.1 2.8 2.3 5.9 3.5v.6H473Z"/>
-                    <path d="M515.8 213c-2.1 0-3.9-.7-5.4-2.2a7 7 0 0 1-2.3-5.1 7.7 7.7 0 0 1 7.7-7.4c2.1 0 3.8.7 5.3 2.2a7.1 7.1 0 0 1 2.3 5.2c0 2-.7 3.7-2.3 5.1a7.1 7.1 0 0 1-5.3 2.2z"/>
-                    <g>
-                        <path d="M91.9 69.5a22.5 22.5 0 0 1 0 45 22.5 22.5 0 0 1 0-45z" style="fill:#ffcb3b"/>
-                        <path d="M156.4 121.5a33 33 0 0 0-32.9 31l-.1 2v15l46 17v-65z" style="fill:#4dd7be"/>
-                        <path d="M123.4 69.5h26c11 0 20 9 20 20v25h-46z" style="fill:#8f66ff"/>
-                        <path d="M89.4 169.5h25v-15a33 33 0 0 0-33-33h-12v28c0 11 9 20 20 20z" style="fill:#fd7e40"/>
-                    </g>
-                </g>
-            </svg>
-            <span class="fs-5">Cookie Consent Manager</span>
-        </a>
-        <div>
-            <a class="btn btn-outline-primary me-2" href="https://github.com/alma-oss/cookie-consent-manager/#readme" target="_blank" rel="noopener noreferrer">Documentation</a>
-            <a class="btn btn-primary" href="https://github.com/alma-oss/cookie-consent-manager/releases" target="_blank" rel="noopener noreferrer">Download</a>
+<header>
+    <div class="py-900 docs-border-bottom-basic">
+        <div class="Container">
+
+            <div
+                class="Flex Flex--vertical Flex--tablet--horizontal Flex--alignmentXCenter Flex--tablet--alignmentXSpaceBetween Flex--alignmentYCenter"
+                style="--flex-spacing-x: var(--spirit-space-1200); --flex-spacing-y: var(--spirit-space-900)"
+            >
+
+                <a href="." class="link-not-underlined link-secondary">
+                    <div class="Flex Flex--horizontal Flex--noWrap Flex--alignmentXCenter Flex--alignmentYCenter" style="--flex-spacing-x: var(--spirit-space-800)">
+                        <div class="ProductLogo docs-HeaderLogo">
+
+                            <!-- Alma Career logo -->
+                            <svg width="126" height="46" viewBox="0 0 126 46">
+                                <g transform="translate(-12.2 -12.3) scale(.26376)">
+                                    <path d="M160.4 46.5h-82a32 32 0 0 0-32 32v83a32 32 0 0 0 32 32h29.1a66.8 66.8 0 0 1 16.5 2.7l1.5.4.4.1h.2l.5.2 1.8.7 6.6 2.4 20.5 7.4 35.6 13 1.4.5V78.5a32.1 32.1 0 0 0-32.1-32z"/>
+                                    <path d="M284.7 115c.6 1.6 1.1 2.5 1.5 3.3.4.7 1.1 1.5 2 2.4.9.9 2.3 1.8 4.1 2.8v.6h-30.7v-.6c2.4-1.2 4.1-2.2 5.1-3.1.9-.9 1.4-1.9 1.4-3.1 0-1.2-.5-3.1-1.5-5.9l-3.4-9.2h-21.3l-.8 2.1a45 45 0 0 0-2.9 11c0 1.8.6 3.2 1.7 4.4 1.1 1.2 3 2.5 5.7 3.8v.6h-20v-.6a31 31 0 0 0 7.2-7.5c1.5-2.4 3.2-6.1 5.1-11.2l13.2-35.6-3.4-6.4a63.8 63.8 0 0 0 14.1-6.9zm-23.2-17.3-9.1-24.9-9 24.9z"/>
+                                    <path d="M293.8 123.5c2.4-1.2 3.9-2.4 4.6-3.5.6-1.1 1-3.3 1-6.6V71.9c0-2.9-.2-5.2-.6-6.7-.4-1.5-.9-2.6-1.5-3.1l-3.4-2.5V59c7-.5 13.7-1.7 20-3.5v57.9c0 3.3.3 5.5 1 6.6.7 1.1 2.2 2.3 4.5 3.5v.6h-25.6z"/>
+                                    <path d="M398.7 113.3c0 3.3.3 5.5 1 6.6.7 1.1 2.2 2.3 4.6 3.5v.6h-25.6v-.6c2.5-1.3 4.1-2.5 4.7-3.6.6-1.1 1-3.3 1.1-6.5l.1-19c0-2.8-.7-4.9-2-6.4a6.4 6.4 0 0 0-4.8-2.2c-3 0-5.7 1.9-8 5.6v21.9c0 3.3.3 5.5 1 6.6.6 1.1 2.2 2.3 4.6 3.5v.6h-25.6v-.4a12 12 0 0 0 4.7-3.5c.7-1.1 1.1-3.3 1.1-6.6l.1-13.5a30 30 0 0 0-1.4-11.2c-.9-1.9-2.6-2.8-5-2.8-3.4 0-6.3 1.9-8.6 5.7v21.8c0 3.3.3 5.5 1 6.6.6 1.1 2.1 2.3 4.4 3.5v.6h-25.5v-.6c2.4-1.2 3.9-2.4 4.6-3.5.6-1.1 1-3.3 1-6.6V94.7c0-4-.3-6.7-1-8.1-.7-1.3-2.2-2.7-4.6-4.1v-.6c6.4-.4 13-1.5 19.7-3.5v10c4.1-6.5 9.4-9.8 15.8-9.8 2.8 0 5.5.8 8.2 2.3a11 11 0 0 1 5.1 7.5c4.2-6.5 9.5-9.8 15.9-9.8a17.2 17.2 0 0 1 8.8 2.7c1.4.9 2.6 2.3 3.6 4.2.9 1.9 1.4 4.1 1.4 6.7z"/>
+                                    <path d="M445.8 125.3c-3.4 0-5.7-1-7-3-1.3-2-1.9-4.3-1.8-6.8h-.1a18.5 18.5 0 0 1-6.4 6.7 18.1 18.1 0 0 1-10.1 2.9c-3.8 0-6.9-1-9.2-3a9.6 9.6 0 0 1-3.5-7.6c0-4.5 2.5-8.3 7.6-11.4 5-3.1 12.3-5.8 21.8-8.2l.2-7.3c0-1.8-.4-3.3-1.2-4.7-.9-1.3-2.3-2-4.1-2-2.8 0-5.1 1.5-6.7 4.4-1.7 3-2.8 6.5-3.4 10.5l-.5.1-10-5.9a21 21 0 0 1 8.2-8c3.8-2.2 8.5-3.4 14.1-3.4 3.6 0 6.5.5 9 1.4 2.4.9 4.2 2.2 5.4 3.9a19 19 0 0 1 2.4 5c.4 1.7.6 3.5.6 5.4l-.5 21.8c0 2 .7 3 2.3 3 1.7 0 3.1-1.2 4.1-3.6l.8.4a14 14 0 0 1-4.3 6.4 12 12 0 0 1-7.7 3zm-17.5-7.9c3 0 5.8-1.5 8.3-4.6l.4-16c-9.5 2.9-14.3 7.4-14.3 13.6 0 2.2.5 3.9 1.6 5.1 1 1.3 2.4 1.9 4 1.9z"/>
+                                    <path d="M260.7 148.2c-4.3 0-8 2.6-11.3 7.8a42 42 0 0 0-5 23c0 10.2 1.7 18.3 5.1 23.7 3.4 5.4 7.3 8.1 11.6 8.1 3.6 0 7.4-1.8 11.3-5.6 4-3.7 7.6-8.2 11.1-13.4h.6l-1.9 18.7c-7.3 2-14.6 3.1-21.8 3.1-4.5 0-8.7-.6-12.6-1.9a33.2 33.2 0 0 1-10.6-5.8 26.5 26.5 0 0 1-7.4-10.5 39.5 39.5 0 0 1-2.7-15.1c0-11 3.1-19.6 9.4-25.7a33.1 33.1 0 0 1 24.1-9.1c6 0 13.2 1 21.6 3.1l1.9 18.4h-.6c-8.5-12.5-16-18.7-22.5-18.7h-.3z"/>
+                                    <path d="M327.8 213.4c-3.4 0-5.7-1-7-3-1.3-2-1.9-4.3-1.8-6.8h-.1a18.5 18.5 0 0 1-6.4 6.7 18.1 18.1 0 0 1-10.1 2.9c-3.8 0-6.9-1-9.2-3a9.6 9.6 0 0 1-3.5-7.6c0-4.5 2.5-8.3 7.6-11.4 5-3.1 12.3-5.8 21.8-8.2l.2-7.3c0-1.8-.4-3.3-1.2-4.7-.9-1.3-2.3-2-4.1-2-2.8 0-5.1 1.5-6.7 4.4-1.7 3-2.8 6.5-3.4 10.5l-.5.1-10-5.9a21 21 0 0 1 8.2-8c3.8-2.2 8.5-3.4 14.1-3.4 3.6 0 6.5.5 9 1.4 2.5.9 4.2 2.2 5.4 3.9a19 19 0 0 1 2.4 5c.4 1.7.6 3.5.6 5.4l-.5 21.8c0 2 .7 3 2.3 3 1.7 0 3.1-1.2 4.1-3.6l.8.4a14 14 0 0 1-4.3 6.4c-2 1.8-4.3 2.9-7.4 2.9zm-17.5-7.8c3 0 5.8-1.5 8.3-4.6l.4-16c-9.5 2.9-14.3 7.4-14.3 13.6 0 2.2.5 3.9 1.6 5.1a5.5 5.5 0 0 0 4 1.9z"/>
+                                    <path d="M340.4 211.7c2.4-1.2 3.9-2.4 4.6-3.5.6-1.1 1-3.3 1-6.6v-19.5c0-3.5-.3-6-1-7.4-.7-1.4-2.2-2.7-4.6-4v-.6a86 86 0 0 0 19.7-3.5l-.2 9.2h.2c.8-2.3 2.3-4.4 4.6-6.2a12.4 12.4 0 0 1 12.8-1.8l-1.9 14.7h-.6c-4-5-7.3-7.5-10-7.5-1.9 0-3.5 1.1-4.5 3.4v23.1c0 3.3.4 5.5 1.2 6.6.8 1.1 2.8 2.3 5.9 3.5v.6h-27.3z"/>
+                                    <path d="M422.9 196.4a28.7 28.7 0 0 1-4.9 10.4 14.5 14.5 0 0 1-6.1 4.6 21.7 21.7 0 0 1-9.1 1.8c-6.7 0-12.3-2.1-16.8-6.3a21.9 21.9 0 0 1-6.7-16.8c0-7 2.2-12.5 6.5-16.8a23 23 0 0 1 16.9-6.5c3.6 0 6.8.6 9.5 1.9 2.8 1.3 4.8 2.8 6.3 4.7 1.4 1.9 2.5 3.7 3.1 5.5.6 1.8 1 3.5 1 5.1v1.1h-30.2v1.3c0 5.8 1.7 10.2 4.9 13 3.3 2.8 7.2 4.3 11.7 4.3 6.1 0 10.5-2.5 13.1-7.5zm-21.8-27.3c-2.4 0-4.4 1.2-5.8 3.6a22.1 22.1 0 0 0-2.7 10.1l16.9-.2a27.1 27.1 0 0 0-1.6-8.3 9.2 9.2 0 0 0-2.6-3.7 6.6 6.6 0 0 0-4.2-1.5z"/>
+                                    <path d="M470.6 196.4a28.7 28.7 0 0 1-4.9 10.4 14.5 14.5 0 0 1-6.1 4.6 21.7 21.7 0 0 1-9.1 1.8c-6.7 0-12.3-2.1-16.8-6.3a21.9 21.9 0 0 1-6.7-16.8c0-7 2.2-12.5 6.5-16.8a23 23 0 0 1 16.9-6.5c3.6 0 6.8.6 9.5 1.9 2.8 1.3 4.8 2.8 6.3 4.7 1.4 1.9 2.5 3.7 3.1 5.5.6 1.8 1 3.5 1 5.1v1.1h-30.2v1.3c0 5.8 1.7 10.2 4.9 13 3.3 2.8 7.2 4.3 11.7 4.3 6.1 0 10.5-2.5 13.1-7.5zm-21.7-27.3c-2.4 0-4.4 1.2-5.8 3.6a22.1 22.1 0 0 0-2.7 10.1l16.9-.2a27.1 27.1 0 0 0-1.6-8.3 9.2 9.2 0 0 0-2.6-3.7 6.8 6.8 0 0 0-4.2-1.5z"/>
+                                    <path d="M473.1 211.7c2.4-1.2 3.9-2.4 4.6-3.5.6-1.1 1-3.3 1-6.6v-19.5c0-3.5-.3-6-1-7.4-.7-1.4-2.2-2.7-4.6-4v-.6a86 86 0 0 0 19.7-3.5l-.2 9.2h.2c.8-2.3 2.4-4.4 4.6-6.2a12.4 12.4 0 0 1 12.8-1.8l-1.9 14.7h-.6c-4-5-7.3-7.5-10-7.5-1.9 0-3.5 1.1-4.5 3.4v23.1c0 3.3.4 5.5 1.2 6.6.8 1.1 2.8 2.3 5.9 3.5v.6H473Z"/>
+                                    <path d="M515.8 213c-2.1 0-3.9-.7-5.4-2.2a7 7 0 0 1-2.3-5.1 7.7 7.7 0 0 1 7.7-7.4c2.1 0 3.8.7 5.3 2.2a7.1 7.1 0 0 1 2.3 5.2c0 2-.7 3.7-2.3 5.1a7.1 7.1 0 0 1-5.3 2.2z"/>
+                                    <g>
+                                        <path d="M91.9 69.5a22.5 22.5 0 0 1 0 45 22.5 22.5 0 0 1 0-45z" style="fill:#ffcb3b"/>
+                                        <path d="M156.4 121.5a33 33 0 0 0-32.9 31l-.1 2v15l46 17v-65z" style="fill:#4dd7be"/>
+                                        <path d="M123.4 69.5h26c11 0 20 9 20 20v25h-46z" style="fill:#8f66ff"/>
+                                        <path d="M89.4 169.5h25v-15a33 33 0 0 0-33-33h-12v28c0 11 9 20 20 20z" style="fill:#fd7e40"/>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="typography-heading-xsmall-regular">Cookie Consent Manager</div>
+                    </div>
+                </a>
+
+                <!-- Primary actions -->
+                <div class="Flex Flex--horizontalReversed Flex--noWrap Flex--alignmentXCenter Flex--alignmentYCenter">
+                    <a class="Button Button--medium Button--primary" href="https://github.com/alma-oss/cookie-consent-manager/releases" target="_blank" rel="noopener noreferrer">Download</a>
+                    <a class="Button Button--medium Button--secondary" href="https://github.com/alma-oss/cookie-consent-manager/#readme" target="_blank" rel="noopener noreferrer">Documentation</a>
+                </div>
+
+            </div>
+
         </div>
+    </div>
+    <div class="pt-600 docs-border-bottom-basic">
+
+        <div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
+            <div class="ScrollView__viewport" data-spirit-element="viewport">
+                <div class="ScrollView__content" data-spirit-element="content">
+
+                    <div class="Container">
+
+                        <!-- Navigation -->
+                        <nav class="Navigation Navigation--horizontal mb-600" style="white-space: nowrap" aria-label="Main Navigation">
+                            <ul>
+                                <li class="NavigationItem">
+                                    <a href="." class="NavigationAction NavigationAction--pill">Basic example</a>
+                                </li>
+                                <li class="NavigationItem">
+                                    <a href="./configuration.html" class="NavigationAction NavigationAction--pill">Extended configuration</a>
+                                </li>
+                                <li class="NavigationItem">
+                                    <a href="./callbacks.html" class="NavigationAction NavigationAction--pill NavigationAction--selected" aria-current="page">Callbacks</a>
+                                </li>
+                                <li class="NavigationItem">
+                                    <a href="./theming.html" class="NavigationAction NavigationAction--pill">Theming</a>
+                                </li>
+                                <li class="NavigationItem">
+                                    <a href="./languages.html" class="NavigationAction NavigationAction--pill">Languages</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows" aria-hidden="true"></div>
+        </div>
+
     </div>
 </header>
 
-<main>
-    <div class="py-5 bg-light text-center">
-        <div class="container">
+<main class="pb-1700">
 
-            <h1 class="display-1 mt-md-3">Callbacks</h1>
-            <p class="lead mb-4 mb-md-5">
+    <!-- Hero -->
+    <div class="py-1400 py-desktop-1600 bg-secondary">
+        <div class="Container">
+
+            <h1 class="typography-heading-large-semibold">Callbacks</h1>
+            <p class="typography-body-large-regular text-secondary">
                 This is an example of configurable callbacks.
             </p>
 
-            <ul class="nav nav-pills justify-content-center mb-3">
-                <li class="nav-item">
-                    <a class="nav-link" href=".">Basic example</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./configuration.html">Extended configuration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="./callbacks.html">Callbacks</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./theming.html">Theming</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./languages.html">Languages</a>
-                </li>
-            </ul>
-
         </div>
     </div>
-    <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1;" hidden>
-        <a href="" data-cc="show-preferencesModal" class="btn btn-primary shadow-lg">
-            <i class="bi bi-gear me-1"></i>
+
+    <!-- Cookie controls -->
+    <div id="reset" class="docs-Controls" hidden>
+        <a
+            href="#"
+            class="Button Button--medium Button--primary docs-shadow"
+            data-cc="show-preferencesModal"
+        >
+            <i class="bi bi-gear mr-500"></i>
             Cookie preferences
         </a>
-        <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>almacareer_ccm</code> cookie and reload">
-            <i class="bi bi-arrow-clockwise me-1"></i>
-            Reset cookie
-        </a>
-    </div>
-    <div class="container py-5">
-        <div class="row justify-content-lg-center">
-            <div class="col col-lg-10 col-xl-8">
-
-                <h2 class="mt-md-3 mb-3">Callbacks</h2>
-                <ul class="list-group list-callbacks">
-                    <li class="list-group-item" id="callback-onFirstConsent">onFirstConsent</li>
-                    <li class="list-group-item" id="callback-onConsent">onConsent</li>
-                    <li class="list-group-item" id="callback-onChange">onChange</li>
-                </ul>
-
-                <h2 class="mt-4 mt-md-5 mb-3">Consent categories</h2>
-                <ul class="list-group list-categories">
-                    <li class="list-group-item" id="consent-necessary">necessary</li>
-                    <li class="list-group-item" id="consent-ad">ad</li>
-                    <li class="list-group-item" id="consent-analytics">analytics</li>
-                    <li class="list-group-item" id="consent-functionality">functionality</li>
-                    <li class="list-group-item" id="consent-personalization">personalization</li>
-                </ul>
-
-                <h2 class="mt-md-3 mb-3">onChange callback – dump of <code>categories</code> parameter</h2>
-                <div id="onchange-content">(empty)</div>
+        <div class="Tooltip" data-spirit-element="tooltip">
+            <button
+                type="button"
+                class="Button Button--medium Button--primary docs-shadow"
+                onclick="removeCookieAndReload();"
+                aria-describedby="tooltip-reset-cookie"
+                data-spirit-toggle="tooltip"
+                data-spirit-target="#tooltip-reset-cookie"
+            >
+                <i class="bi bi-arrow-clockwise mr-500"></i>
+                Reset cookie
+            </button>
+            <div id="tooltip-reset-cookie" class="TooltipPopover is-hidden" data-spirit-placement="top-start">
+                Remove <code>almacareer_ccm</code> cookie and reload
+                <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
             </div>
         </div>
     </div>
+
+    <!-- Main page content -->
+    <div class="Container py-1000 py-tablet-1400">
+
+        <h2 class="typography-heading-small-bold">Callbacks</h2>
+        <ul id="callbacks" class="Stack Stack--hasSpacing mt-1000 mb-1200">
+            <li class="docs-Category" id="callback-onFirstConsent">
+                <div>onFirstConsent</div>
+                <span class="Tag Tag--small Tag--danger">Not called</span>
+                <span class="Tag Tag--small Tag--success">Called</span>
+            </li>
+            <li class="docs-Category" id="callback-onConsent">
+                <div>onConsent</div>
+                <span class="Tag Tag--small Tag--danger">Not called</span>
+                <span class="Tag Tag--small Tag--success">Called</span>
+            </li>
+            <li class="docs-Category" id="callback-onChange">
+                <div>onChange</div>
+                <span class="Tag Tag--small Tag--danger">Not called</span>
+                <span class="Tag Tag--small Tag--success">Called</span>
+            </li>
+        </ul>
+
+        <h2 class="typography-heading-small-bold">Consent categories</h2>
+        <ul id="categories" class="Stack Stack--hasSpacing mt-1000 mb-1200">
+            <li class="docs-Category" id="consent-necessary">
+                <div>necessary</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+            <li class="docs-Category" id="consent-ad">
+                <div>ad</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+            <li class="docs-Category" id="consent-analytics">
+                <div>analytics</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+            <li class="docs-Category" id="consent-functionality">
+                <div>functionality</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+            <li class="docs-Category" id="consent-personalization">
+                <div>personalization</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+        </ul>
+
+        <h2 class="typography-heading-small-bold">onChange callback – dump of <code>categories</code> parameter</h2>
+        <div id="onchange-content" class="docs-Category is-empty mb-1000">
+            Empty
+        </div>
+
+    </div>
 </main>
+
+<footer class="bg-secondary mt-1700 pt-1400 pb-1200 text-center">
+    <div class="Container">
+
+        © Alma Career Oy and its subsidiaries
+
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" data-manual></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script>
-    // Bootstrap Tooltips
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-</script>
 
-<script defer src="../dist/init.js"></script>
+<script defer src="../dist/init.js"></script><!-- You will load this from CDN instead -->
 <script>
   window.addEventListener('DOMContentLoaded', function () {
     window.ccm = initCookieConsentManager( // note we store cookieConsent instance in global window.ccm variable
@@ -170,7 +257,10 @@
           markCallbackCalled('onChange');
           updateAcceptedCategories(cookieConsent);
 
-          document.getElementById('onchange-content').innerHTML = `<pre><code class="language-json">${JSON.stringify(categories)}</code></pre>`;
+          const onChangeContentElement = document.getElementById('onchange-content');
+          onChangeContentElement.classList.remove('is-empty');
+          onChangeContentElement.innerHTML = `<pre><code class="language-json">${JSON.stringify(categories)}</code></pre>`;
+
           window.Prism.highlightAll(); // highlight previous piece of code with Prism.js
         },
       }
@@ -179,12 +269,12 @@
 
   const markCallbackCalled = function (callbackName) {
     const element = document.getElementById(`callback-${callbackName}`);
-    element.classList.add('list-group-item-success');
+    element.classList.add('is-success');
   }
 
-  const resetCallbackMarks = function (callbackName) {
-    for (const element of document.querySelectorAll('.list-callbacks .list-group-item-success')) {
-      element.classList.remove('list-group-item-success');
+  const resetCallbackMarks = function () {
+    for (const element of document.querySelectorAll('#callbacks > .is-success')) {
+      element.classList.remove('is-success');
     }
   }
 </script>
