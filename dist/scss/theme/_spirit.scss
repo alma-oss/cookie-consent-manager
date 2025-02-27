@@ -1,0 +1,75 @@
+// Map Spirit design tokens to the original Cookie Consent custom properties.
+//
+// 1. The font family does not change between breakpoints, so we can use the mobile value from a common text style.
+
+// stylelint-disable custom-property-empty-line-before -- Grouping is useful here.
+
+@use 'sass:map';
+@use '@themes' as themes;
+@use '@tokens' as tokens;
+@use '../tools/themes' as theme-tools;
+
+@include theme-tools.all-themes-selector($themes: themes.$themes) {
+    // Common
+    --cc-font-family: #{map.get(tokens.$body-medium-regular, mobile, font-family)}; // 1.
+    --cc-bg: #{tokens.$background-primary};
+    --cc-primary-color: #{tokens.$text-primary};
+    --cc-secondary-color: #{tokens.$text-secondary};
+
+    // Links
+    --cc-link-color: #{tokens.$link-primary-state-default};
+
+    // Buttons
+    --cc-btn-border-radius: #{tokens.$radius-full};
+
+    --cc-btn-primary-bg: #{tokens.$component-button-primary-state-default};
+    --cc-btn-primary-color: #{tokens.$component-button-primary-content};
+    --cc-btn-primary-border-color: #{tokens.$component-button-primary-border};
+    --cc-btn-primary-hover-bg: #{tokens.$component-button-primary-state-hover};
+    --cc-btn-primary-hover-color: #{tokens.$component-button-primary-content};
+    --cc-btn-primary-hover-border-color: #{tokens.$component-button-primary-border};
+
+    --cc-btn-secondary-bg: #{tokens.$component-button-secondary-state-default};
+    --cc-btn-secondary-color: #{tokens.$component-button-secondary-content};
+    --cc-btn-secondary-border-color: #{tokens.$component-button-secondary-border};
+    --cc-btn-secondary-hover-bg: #{tokens.$component-button-secondary-state-hover};
+    --cc-btn-secondary-hover-color: #{tokens.$component-button-secondary-content};
+    --cc-btn-secondary-hover-border-color: #{tokens.$component-button-secondary-border};
+
+    // Toggles
+    --cc-pm-toggle-border-radius: #{tokens.$radius-400};
+
+    --cc-toggle-on-bg: #{tokens.$component-toggle-selected-state-default};
+    --cc-toggle-off-bg: #{tokens.$component-toggle-unselected-state-default};
+    --cc-toggle-on-knob-bg: #{tokens.$component-toggle-selected-content};
+    --cc-toggle-off-knob-bg: #{tokens.$component-toggle-unselected-content};
+
+    --cc-toggle-readonly-bg: #{tokens.$disabled-background};
+    --cc-toggle-readonly-knob-bg: #{tokens.$disabled-content};
+    --cc-toggle-readonly-knob-icon-color: #{tokens.$disabled-background};
+
+    // Cookie categories
+    --cc-cookie-category-block-bg: #{tokens.$background-interactive-state-default};
+    --cc-cookie-category-block-border: #{tokens.$border-basic};
+    --cc-cookie-category-block-hover-bg: #{tokens.$background-interactive-state-hover};
+    --cc-cookie-category-block-hover-border: #{tokens.$border-basic};
+
+    --cc-cookie-category-expanded-block-bg: #{tokens.$background-primary};
+    --cc-cookie-category-expanded-block-hover-bg: #{tokens.$background-primary};
+
+    // Separators
+    --cc-separator-border-color: #{tokens.$border-basic};
+
+    // Backdrop
+    --cc-overlay-bg: #{tokens.$background-backdrop};
+
+    // Modal
+    --cc-modal-margin: #{tokens.$space-700};
+    --cc-modal-border-radius: #{tokens.$radius-300};
+    --cc-modal-transition-duration: 250ms;
+
+    // Footer
+    --cc-footer-bg: #{tokens.$background-secondary};
+    --cc-footer-color: #{tokens.$text-secondary};
+    --cc-footer-border-color: #{tokens.$border-basic};
+}

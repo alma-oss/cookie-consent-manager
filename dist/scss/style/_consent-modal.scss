@@ -1,103 +1,39 @@
 @use '@tokens' as tokens;
-@use '../settings/settings';
-@use '../tools/units';
+@use '../tools/typography';
 
-#cm {
-    max-width: settings.$consent-box-max-width;
-    max-height: calc(100vh - #{units.convert2em(tokens.$space-800)});
-    padding: units.convert2em(tokens.$space-800);
-    overflow-y: auto;
-    box-shadow: tokens.$shadow-100;
-    -webkit-overflow-scrolling: touch;
+#cc-main .cm__title {
+    @include typography.generate(tokens.$heading-small-bold);
 }
 
-#cm.box,
-#cm.bar {
-    padding: units.convert2em(tokens.$space-900);
+#cc-main .cm__desc {
+    @include typography.generate(tokens.$body-small-regular);
 }
 
-#cm.bar {
-    max-height: 100vh;
+#cc-main .cm--flip .cm__btn + .cm__btn,
+#cc-main .cm--flip .cm__btn-group + .cm__btn-group {
+    margin-bottom: tokens.$space-500;
 }
 
-#cm.bar #c-inr {
-    display: flex;
-    align-items: flex-end;
-    max-width: none;
+#cc-main .cm--bar:not(.cm--inline) .cm__btn + .cm__btn,
+#cc-main .cm--bar:not(.cm--inline) .cm__btn-group + .cm__btn-group {
+    margin-left: tokens.$space-700;
 }
 
-#cm.bar #c-inr-i {
-    flex-grow: 1;
-    margin-right: units.convert2em(tokens.$space-1000);
+#cc-main .cm--bar.cm--flip:not(.cm--inline) .cm__btn + .cm__btn,
+#cc-main .cm--bar.cm--flip:not(.cm--inline) .cm__btn-group + .cm__btn-group {
+    margin-right: tokens.$space-700;
 }
 
-#cm.bar #c-bns {
-    flex-shrink: 0;
-    align-items: baseline;
-    max-width: none;
-    margin-top: 0;
-}
-
-#cm.box #c-bns {
-    justify-content: flex-end;
-}
-
-#cm.box #c-bns .c-bn,
-#cm.bar #c-bns .c-bn {
-    flex: none;
-    width: auto;
-}
-
-#cm.cloud {
-    max-width: settings.$consent-cloud-max-width;
-    padding: units.convert2em(tokens.$space-900) units.convert2em(tokens.$space-1000);
-    overflow-y: auto;
-}
-
-.cc_div #c-bns {
-    margin-top: units.convert2em(tokens.$space-800);
-}
-
-@media screen and (max-width: settings.$breakpoint-desktop-down) {
-    #cm.bar #c-inr {
-        flex-flow: column;
-        align-items: stretch;
+@media screen and (width <= 640px) {
+    #cc-main .cm__btn + .cm__btn,
+    #cc-main .cm__btn-group + .cm__btn-group {
+        // stylelint-disable-next-line declaration-no-important -- Override original library styles.
+        margin: tokens.$space-500 0 0 !important;
     }
 
-    #cm.bar #c-inr-i {
-        margin-right: 0;
-        margin-bottom: units.convert2em(tokens.$space-800);
-    }
-
-    #cm.bar #c-bns {
-        align-self: flex-end;
-    }
-}
-
-@media screen and (max-width: settings.$breakpoint-tablet-down) {
-    #cm,
-    #cm.cloud,
-    #cm.left,
-    #cm.right {
-        // stylelint-disable-next-line declaration-no-important -- Override original styles.
-        padding: units.convert2em(tokens.$space-700) !important;
-    }
-
-    .cc_div #c-bns {
-        margin-top: units.convert2em(tokens.$space-700);
-    }
-
-    #cm.bar #c-inr-i {
-        margin-bottom: units.convert2em(tokens.$space-700);
-    }
-
-    #cm.bar #c-bns {
-        align-self: stretch;
-    }
-
-    .cc_div .c-bn,
-    #cm .c-bn,
-    #cm.bar #c-bns .c-bn {
-        width: 100%;
+    #cc-main .cm--flip .cm__btn + .cm__btn,
+    #cc-main .cm--flip .cm__btn-group + .cm__btn-group {
+        // stylelint-disable-next-line declaration-no-important -- Override original library styles.
+        margin-bottom: tokens.$space-500 !important;
     }
 }

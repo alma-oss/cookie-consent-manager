@@ -1,119 +1,15 @@
+// 1. Any order is correct for us, but call the typography mixin last to prevent Sass deprecation warning.
+// @see https://sass-lang.com/d/mixed-decls
+
 @use '@tokens' as tokens;
-@use '../settings/settings';
-@use '../tools/units';
+@use '../tools/typography';
 
-.cc_div .c-bn,
-#cm.cloud .c-bn {
-    padding: settings.$button-padding;
-    font-size: inherit;
-    border-width: var(--lmcccm-p-btn-border-width);
-    border-radius: var(--lmcccm-p-btn-border-radius);
-}
+#cc-main .cm__btn,
+#cc-main .pm__btn,
+#cc-main .pm__close-btn {
+    min-height: 40px;
+    padding-inline: calc(#{tokens.$space-900} - #{tokens.$border-width-100});
+    padding-block: calc(#{tokens.$space-500} - #{tokens.$border-width-100});
 
-.cc_div .bns-t .c-bn {
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        padding: settings.$button-padding;
-        font-size: inherit;
-    }
-}
-
-// Primary and secondary buttons
-$_consent-modal-button-selector: '#cm .c-bn' !default;
-
-@if settings.$enable-link-buttons {
-    $_consent-modal-button-selector: '#cm .c-bn:not(.c_link)';
-}
-
-// stylelint-disable-next-line selector-type-no-unknown -- Allow variable selector.
-#{$_consent-modal-button-selector},
-#s-bns .c-bn {
-    overflow: hidden;
-    font-weight: var(--lmcccm-p-btn-font-weight);
-    text-overflow: ellipsis;
-    text-transform: var(--lmcccm-p-btn-text-transform);
-    white-space: nowrap;
-    border-style: var(--lmcccm-p-btn-border-style);
-}
-
-// Secondary buttons (default appearance of buttons)
-#cm .c-bn,
-#c-bns.swap .c-bn:first-child,
-#c-bns:not(.swap) .c-bn:last-child,
-#s-bns .c-bn {
-    color: var(--lmcccm-p-btn-secondary-text);
-    border-color: var(--lmcccm-p-btn-secondary-border);
-    background-color: var(--lmcccm-p-btn-secondary-bg);
-
-    &:hover {
-        color: var(--lmcccm-p-btn-secondary-hover-text);
-        border-color: var(--lmcccm-p-btn-secondary-hover-border);
-        background-color: var(--lmcccm-p-btn-secondary-hover-bg);
-    }
-
-    &:active {
-        color: var(--lmcccm-p-btn-secondary-active-text);
-        border-color: var(--lmcccm-p-btn-secondary-active-border);
-        background-color: var(--lmcccm-p-btn-secondary-active-bg);
-    }
-}
-
-// Primary buttons
-#c-bns.swap .c-bn:last-child,
-#c-bns:not(.swap) .c-bn:first-child,
-#s-bns .c-bn:first-child {
-    color: var(--lmcccm-p-btn-primary-text);
-    border-color: var(--lmcccm-p-btn-primary-border);
-    background: var(--lmcccm-p-btn-primary-bg);
-
-    &:hover {
-        color: var(--lmcccm-p-btn-primary-hover-text);
-        border-color: var(--lmcccm-p-btn-primary-hover-border);
-        background: var(--lmcccm-p-btn-primary-hover-bg);
-    }
-
-    &:active {
-        color: var(--lmcccm-p-btn-primary-active-text);
-        border-color: var(--lmcccm-p-btn-primary-active-border);
-        background: var(--lmcccm-p-btn-primary-active-bg);
-    }
-}
-
-// Link buttons
-@if settings.$enable-link-buttons {
-    #cm .c-bn.c_link,
-    #c-bns.swap .c_link:first-child,
-    #c-bns:not(.swap) .c_link:last-child {
-        padding-right: units.convert2em(tokens.$space-400);
-        padding-left: units.convert2em(tokens.$space-400);
-        font-weight: inherit;
-        font-size: inherit;
-        text-decoration: var(--lmcccm-p-link-text-decoration);
-        color: var(--lmcccm-p-link-text);
-        background: none;
-
-        &:hover {
-            text-decoration: var(--lmcccm-p-link-hover-text-decoration);
-            color: var(--lmcccm-p-link-hover-text);
-        }
-
-        &:active {
-            color: var(--lmcccm-p-link-active-text);
-        }
-    }
-}
-
-// Neighboring buttons – default spacing
-#c-bns .c-bn + .c-bn,
-#s-bns .c-bn + .c-bn {
-    margin-left: settings.$button-spacing-x;
-
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        margin-top: settings.$button-spacing-y;
-        margin-left: 0;
-    }
-}
-
-#cm.cloud #c-bns .c-bn + .c-bn {
-    margin-top: settings.$button-spacing-y;
-    margin-left: 0;
+    @include typography.generate(tokens.$body-small-semibold); // 1.
 }

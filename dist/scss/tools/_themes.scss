@@ -1,0 +1,38 @@
+// Theme generation inspired by the `spirit-web` package
+// @see https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/tools/_themes.scss
+//
+// 1.The default theme will be applied to the :root element.
+
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:list';
+
+@mixin generate($themes) {
+    // 1.
+    $is-default-theme: true;
+
+    @each $theme-name, $theme-token-types in $themes {
+        $selector: if($is-default-theme, ':root, .#{$theme-name}', '.#{$theme-name}');
+        $theme-mixins: map.get($theme-token-types, mixins);
+
+        #{$selector} {
+            @each $theme-mixin-name, $theme-mixin in $theme-mixins {
+                @include meta.apply($theme-mixin);
+            }
+        }
+
+        $is-default-theme: false;
+    }
+}
+
+@mixin all-themes-selector($themes) {
+    $selector: ':root';
+
+    @each $theme-name in map.keys($themes) {
+        $selector: list.append($selector, '.#{$theme-name}', comma);
+    }
+
+    #{list.join($selector, ', ')} {
+        @content;
+    }
+}

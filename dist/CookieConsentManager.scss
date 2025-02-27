@@ -5,7 +5,7 @@
  */
 
 // Vanilla Cookie Consent CSS by Orest Bida.
-@use 'vanilla-cookieconsent/dist/cookieconsent.css';
+@forward 'vanilla-cookieconsent/dist/cookieconsent.css';
 
 // Alma Career Cookie Consent Manager CSS by Alma Career.
-@use 'scss';
+@forward 'scss/main';

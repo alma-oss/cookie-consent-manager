@@ -1,11 +1,38 @@
-/* stylelint-disable selector-no-qualifying-type */
-.cc_div .b-tg,
-.cc_div .b-tg .c-tg,
-.cc_div .b-tg .c-tgl,
-.cc_div span.t-lb {
-    width: 3em;
+@use '@tokens' as tokens;
+
+#cc-main .section__toggle,
+#cc-main .section__toggle-wrapper,
+#cc-main .toggle__icon,
+#cc-main .toggle__label {
+    width: 44px;
+    height: 24px;
 }
 
-.cc_div .b-tg .c-tgl:checked ~ .c-tg::after {
-    transform: translateX(1.5em);
+#cc-main .toggle__icon {
+    box-shadow: 0 0 0 tokens.$border-width-100 tokens.$component-toggle-unselected-border;
+}
+
+#cc-main .toggle__icon-circle {
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    box-shadow: none;
+}
+
+#cc-main .toggle__icon-off,
+#cc-main .toggle__icon-on {
+    top: -1px;
+}
+
+#cc-main .section__toggle:checked ~ .toggle__icon {
+    box-shadow: 0 0 0 tokens.$border-width-100 var(--cc-toggle-on-bg);
+}
+
+#cc-main .section__toggle:checked:disabled ~ .toggle__icon {
+    box-shadow: 0 0 0 tokens.$border-width-100 tokens.$disabled-border;
+}
+
+#cc-main .section__toggle:checked ~ .toggle__icon .toggle__icon-circle {
+    transform: translateX(20px);
 }

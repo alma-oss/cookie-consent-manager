@@ -1,165 +1,126 @@
-@use 'sass:map';
+// 1. Revert inline overrides of the original library 🤦🏻‍♂️.
+// 2. Any order is correct for us, but call the typography mixin last to prevent Sass deprecation warning.
+// @see https://sass-lang.com/d/mixed-decls
+
 @use '@tokens' as tokens;
-@use '../settings/settings';
-@use '../tools/units';
+@use '../tools/typography';
 
-#s-hdr,
-#s-inr,
-#s-bns {
-    color: var(--lmcccm-p-modal-text);
-    background-color: var(--lmcccm-p-modal-bg);
-}
+// Dialog
+#cc-main .pm--box {
+    max-height: 39em;
 
-#cs,
-#s-bl,
-#s-bns {
-    padding: settings.$modal-padding-desktop;
-
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        padding: settings.$modal-padding-tablet;
+    @media screen and (width <= 640px) {
+        max-height: 100%;
     }
 }
 
-#s-hdr {
-    height: calc(#{settings.$modal-header-height-desktop} + #{settings.$modal-section-border-width});
-    padding: 0 settings.$modal-padding-desktop;
-    border-bottom-width: settings.$modal-section-border-width;
-
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        height: calc(#{settings.$modal-header-height-tablet} + #{settings.$modal-section-border-width});
-        padding: 0 settings.$modal-padding-tablet;
-    }
+// Header
+#cc-main .pm__header {
+    padding-inline: tokens.$space-1000;
+    padding-top: tokens.$space-1000;
+    padding-bottom: tokens.$space-700;
 }
 
-#s-inr {
-    max-width: var(--lmcccm-p-modal-max-width);
-    padding-top: settings.$modal-header-height-desktop;
-    padding-bottom: settings.$modal-footer-height-desktop;
-    border-radius: var(--lmcccm-p-modal-border-radius);
-    box-shadow: tokens.$shadow-200;
+#cc-main .pm__title {
+    margin-right: tokens.$space-500;
 
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        padding-top: settings.$modal-header-height-tablet;
-        padding-bottom: settings.$modal-footer-height-tablet-2-buttons;
-    }
-}
-
-#s-bns {
-    display: flex;
-    height: calc(#{settings.$modal-footer-height-desktop} + #{settings.$modal-section-border-width});
-    border-top-width: settings.$modal-section-border-width;
-
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        display: block;
-        height: calc(#{settings.$modal-footer-height-tablet-2-buttons} + #{settings.$modal-section-border-width});
-    }
-}
-
-#s-bns .c-bn {
-    flex-grow: 0;
-    flex-basis: auto;
-
-    &:nth-last-child(2) {
-        margin-right: settings.$button-spacing-x;
-    }
-
-    &:last-child {
-        margin-left: auto;
-    }
-
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        &:nth-last-child(2) {
-            margin-right: 0;
-        }
-    }
-}
-
-// Layout variants
-#c-s-in {
-    height: 100%;
-    max-height: var(--lmcccm-p-modal-max-height);
-
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        max-height: none;
-    }
-}
-
-.cc_div .bar #s-inr {
-    max-width: var(--lmcccm-p-modal-max-width);
-}
-
-// Three buttons in footer
-#s-inr.bns-t {
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        padding-bottom: settings.$modal-footer-height-tablet-3-buttons;
-    }
-}
-
-.bns-t #s-bns {
-    @media screen and (max-width: settings.$breakpoint-tablet-down) {
-        height: calc(#{settings.$modal-footer-height-tablet-3-buttons} + #{settings.$modal-section-border-width});
-    }
+    @include typography.generate(tokens.$heading-small-bold); // 2.
 }
 
 // Close button
-#s-c-bn {
-    margin-right: -0.4em;
-    font-size: 1.8em;
-    color: inherit;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
+#cc-main .pm__close-btn {
+    padding: 0;
+    color: tokens.$component-button-tertiary-content;
+    border-color: tokens.$component-button-tertiary-border;
+    background-color: tokens.$component-button-tertiary-state-default;
 
-    &::before,
-    &::after {
-        width: 2.5px;
-        background-color: currentcolor;
-    }
-
-    &:hover,
-    &:active {
-        background-color: transparent;
+    &:hover {
+        border-color: tokens.$component-button-tertiary-border;
+        background-color: tokens.$component-button-tertiary-state-hover;
     }
 }
 
-// Modal content
-#s-cnt .p {
-    margin-top: 0;
-    font-size: inherit;
-    color: inherit;
+#cc-main .pm__close-btn svg,
+#cc-main .pm__close-btn:hover svg {
+    stroke: currentcolor;
 }
 
-#s-bl .act .b-acc,
-.cc_div .b-tl,
-.cc_div .c-bl {
-    border-radius: var(--lmcccm-p-cookie-category-border-radius);
+// Body
+#cc-main .pm__body {
+    padding-inline: tokens.$space-1000;
+    padding-block: tokens.$space-700;
 }
 
-#s-bl .c-bl {
-    margin-bottom: units.convert2em(tokens.$space-400);
+// Content
+#cc-main .pm__section-title {
+    border-radius: tokens.$radius-200;
+}
 
-    &:first-child {
-        margin-bottom: units.convert2em(tokens.$space-600);
+#cc-main .pm__section-desc {
+    @include typography.generate(tokens.$body-small-regular);
+}
+
+#cc-main .pm__section,
+#cc-main .pm__section--toggle {
+    border-radius: tokens.$radius-200;
+}
+
+#cc-main .pm__section--toggle {
+    margin-bottom: tokens.$space-500;
+}
+
+#cc-main .pm__section--toggle.is-expanded {
+    --cc-cookie-category-block-bg: revert; // 1.
+    --cc-cookie-category-block-border: revert; // 1.
+
+    background-color: var(--cc-cookie-category-expanded-block-bg);
+
+    &:hover {
+        background-color: var(--cc-cookie-category-expanded-block-hover-bg);
+    }
+}
+
+#cc-main .pm__section--toggle .pm__section-desc-wrapper {
+    border-bottom-right-radius: tokens.$radius-200;
+    border-bottom-left-radius: tokens.$radius-200;
+}
+
+#cc-main .pm__section--expandable .pm__section-arrow {
+    background: none;
+}
+
+#cc-main .pm__section--expandable .pm__section-arrow svg {
+    stroke: currentcolor;
+}
+
+// Footer
+#cc-main .pm__footer {
+    padding-inline: tokens.$space-1000;
+    padding-top: tokens.$space-700;
+    padding-bottom: tokens.$space-1000;
+}
+
+// Footer actions
+#cc-main .pm__btn + .pm__btn,
+#cc-main .pm__btn-group + .pm__btn-group {
+    margin-left: tokens.$space-700;
+}
+
+#cc-main .pm--flip .pm__btn + .pm__btn,
+#cc-main .pm--flip .pm__btn-group + .pm__btn-group {
+    margin-right: tokens.$space-700;
+}
+
+@media screen and (width <= 640px) {
+    #cc-main .pm__btn + .pm__btn,
+    #cc-main .pm__btn-group + .pm__btn-group {
+        // stylelint-disable-next-line declaration-no-important -- Override original library styles.
+        margin: tokens.$space-500 0 0 !important;
     }
 
-    &:last-child {
-        margin-bottom: 0;
+    #cc-main .pm--flip .pm__btn + .pm__btn,
+    #cc-main .pm--flip .pm__btn-group + .pm__btn-group {
+        // stylelint-disable-next-line declaration-no-important -- Override original library styles.
+        margin-bottom: tokens.$space-500 !important;
     }
-}
-
-#s-bl .b-acc .p {
-    padding: units.convert2em(tokens.$space-600);
-}
-
-#s-cnt .b-bn .b-tl {
-    padding: units.convert2em(tokens.$space-600) 5em units.convert2em(tokens.$space-600) 3.25em;
-    font-weight: map.get(tokens.$body-medium-text-regular, 'mobile', 'font-weight');
-    font-size: units.convert2em(map.get(tokens.$body-medium-text-regular, 'mobile', 'font-size'));
-    line-height: map.get(tokens.$body-medium-text-regular, 'mobile', 'line-height');
-}
-
-.cc_div .act .b-bn .exp::before,
-.cc_div .b-bn .exp::before {
-    top: 48%;
-    border-color: inherit;
 }

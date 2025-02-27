@@ -1,3 +1,33 @@
+<a name="3.0.0-beta.0"></a>
+# [3.0.0-beta.0](https://github.com/alma-oss/cookie-consent-manager/compare/3.0.0-alpha.1...3.0.0-beta.0) (2025-02-27)
+
+### BREAKING CHANGES
+
+- Update Spirit design tokens to v3 ([18e4f8b](https://github.com/alma-oss/cookie-consent-manager/commit/18e4f8b))
+
+### Dependencies
+
+- Temporarily froze stylelint config version ([4810595](https://github.com/alma-oss/cookie-consent-manager/commit/4810595))
+- Update actions/setup-node digest to 1d0ff46 ([23e2909](https://github.com/alma-oss/cookie-consent-manager/commit/23e2909))
+- Update all dev dependencies ([5bdde4c](https://github.com/alma-oss/cookie-consent-manager/commit/5bdde4c))
+- Update all dev dependencies ([d48f1dd](https://github.com/alma-oss/cookie-consent-manager/commit/d48f1dd))
+- Update dependency vanilla-cookieconsent to v3.1.0 ([abebff4](https://github.com/alma-oss/cookie-consent-manager/commit/abebff4))
+
+### Documentation
+
+- Sort languages in docs by their name, not code ([ddd86e5](https://github.com/alma-oss/cookie-consent-manager/commit/ddd86e5))
+- Update README header to clearly states affiliation of the library ([6eb71e4](https://github.com/alma-oss/cookie-consent-manager/commit/6eb71e4))
+
+### Features
+
+- Add French (fr) translation ([97073c0](https://github.com/alma-oss/cookie-consent-manager/commit/97073c0))
+- Add Portuguese (pt) translation ([7deb4bf](https://github.com/alma-oss/cookie-consent-manager/commit/7deb4bf))
+- Add Romanian (ro) translation ([cc16614](https://github.com/alma-oss/cookie-consent-manager/commit/cc16614))
+- Add Serbian (sr) translation ([3cd805c](https://github.com/alma-oss/cookie-consent-manager/commit/3cd805c))
+- Add Spanish (es) translation ([84e5205](https://github.com/alma-oss/cookie-consent-manager/commit/84e5205))
+- Submit consent language to consent collector (fixes [#387](https://github.com/alma-oss/cookie-consent-manager/issues/387)) ([d5a0eb0](https://github.com/alma-oss/cookie-consent-manager/commit/d5a0eb0))
+
+
 <a name="3.0.0-alpha.1"></a>
 # [3.0.0-alpha.1](https://github.com/alma-oss/cookie-consent-manager/compare/3.0.0-alpha.0...3.0.0-alpha.1) (2025-01-23)
 

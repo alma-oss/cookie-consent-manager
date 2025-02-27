@@ -1,14 +1,17 @@
-.cc_div a {
-    text-decoration: var(--lmcccm-p-link-text-decoration);
-    color: var(--lmcccm-p-link-text);
-    border-bottom: none;
+// 1. Suppress the animated line of the original library.
+
+@use '@tokens' as tokens;
+
+#cc-main .cc__link,
+#cc-main a {
+    text-decoration: none;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.1875em;
+    color: var(--cc-link-color, tokens.$link-primary-state-default);
+    background: none; // 1.
 
     &:hover {
-        text-decoration: var(--lmcccm-p-link-hover-text-decoration);
-        color: var(--lmcccm-p-link-hover-text);
-    }
-
-    &:active {
-        color: var(--lmcccm-p-link-active-text);
+        text-decoration: underline;
+        color: var(--cc-link-color, tokens.$link-primary-state-hover);
     }
 }
