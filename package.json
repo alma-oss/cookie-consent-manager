@@ -84,7 +84,7 @@
     "vanilla-cookieconsent": "3.1.0"
   },
   "devDependencies": {
-    "@almacareer/stylelint-config": "9.0.1",
+    "@almacareer/stylelint-config": "9.1.0",
     "@babel/core": "7.26.9",
     "@babel/preset-env": "7.26.9",
     "@commitlint/cli": "19.7.1",

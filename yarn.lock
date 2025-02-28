@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@almacareer/stylelint-config@9.0.1":
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/@almacareer/stylelint-config/-/stylelint-config-9.0.1.tgz#773e680834dc8af83b06f929e437228a13bdfe59"
-  integrity sha512-D7/oTdZU6lPW0CuxXgJu1sVU+JQsdn/3EKsvIztZq4kBSvhYOqumIDy+DMi1jBFC2LCjj8gKTjhe3w3Jsuslrw==
+"@almacareer/stylelint-config@9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@almacareer/stylelint-config/-/stylelint-config-9.1.0.tgz#11cfe6256d72f5ec73739fea77ddf67b32d42d15"
+  integrity sha512-nKEeQyTyWI3lqLGH1SHTlRbKDr38gtxiIrr5fKShEGc0yzzH8UL25Is42Z/gEwN36Vs5L/bRSva89W9LLekkMQ==
   dependencies:
     postcss-scss "^4.0.3"
     stylelint-config-standard-scss "^13.0.0"
