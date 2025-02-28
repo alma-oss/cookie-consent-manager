@@ -14,14 +14,13 @@
     @each $theme-name, $theme-token-types in $themes {
         $selector: if($is-default-theme, ':root, .#{$theme-name}', '.#{$theme-name}');
         $theme-mixins: map.get($theme-token-types, mixins);
+        $is-default-theme: false;
 
         #{$selector} {
             @each $theme-mixin-name, $theme-mixin in $theme-mixins {
                 @include meta.apply($theme-mixin);
             }
         }
-
-        $is-default-theme: false;
     }
 }
 
