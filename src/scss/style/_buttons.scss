@@ -1,5 +1,6 @@
 // 1. Any order is correct for us, but call the typography mixin last to prevent Sass deprecation warning.
-// @see https://sass-lang.com/d/mixed-decls
+//    @see https://sass-lang.com/d/mixed-decls
+// 2. Alma's stylelint-config is not yet ready to force blockless mixin calls to come after declarations (see 1.).
 
 @use '@tokens' as tokens;
 @use '../tools/typography';
@@ -11,5 +12,6 @@
     padding-inline: calc(#{tokens.$space-900} - #{tokens.$border-width-100});
     padding-block: calc(#{tokens.$space-500} - #{tokens.$border-width-100});
 
+    // stylelint-disable-next-line order/order -- 2.
     @include typography.generate(tokens.$body-small-semibold); // 1.
 }
