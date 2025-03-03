@@ -1,9 +1,9 @@
 # Upgrade from 2.x to 3.0
-Release 3.0 includes backward-incompatible changes, including changes in the underlying vanilla-cookieconsent library,
+Release 3.0 includes many backward-incompatible changes, including changes in the underlying vanilla-cookieconsent library,
 which has also been upgraded from version 2 to 3.
 
-This guide summarizes relevant changes in both `@almacareer/cookie-consent` and `(vanilla-cookieconsent)[https://github.com/orestbida/cookieconsent]`
-library to help you upgrade your codebase.
+This guide summarizes relevant changes in both `@almacareer/cookie-consent` and
+[`vanilla-cookieconsent`](https://github.com/orestbida/cookieconsent) library to help you upgrade your codebase.
 
 ## Library npm scope changed to `@almacareer`
 
