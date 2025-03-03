@@ -2,12 +2,13 @@
   "extends": [
     "local>alma-oss/renovate-config",
     "local>alma-oss/renovate-config:scheduleWeeklyBusinessHours",
-    "local>alma-oss/renovate-config:groupMajorProdDependencies",
-    "local>alma-oss/renovate-config:groupNonMajorProdDependencies",
-    "local>alma-oss/renovate-config:groupAllDevDependencies",
+    "local>alma-oss/renovate-config:groupMajorProdDependencies(npm)",
+    "local>alma-oss/renovate-config:groupNonMajorProdDependencies(npm)",
+    "local>alma-oss/renovate-config:groupAllDevDependencies(npm)",
     ":dependencyDashboard"
   ],
   "enabledManagers": ["npm", "github-actions"],
+  "commitMessagePrefix": "Deps: ",
   "packageRules": [
     {
       "groupName": "Froze eslint on ^8",
