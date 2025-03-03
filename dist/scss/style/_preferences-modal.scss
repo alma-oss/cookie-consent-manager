@@ -1,6 +1,7 @@
 // 1. Revert inline overrides of the original library 🤦🏻‍♂️.
 // 2. Any order is correct for us, but call the typography mixin last to prevent Sass deprecation warning.
-// @see https://sass-lang.com/d/mixed-decls
+//    @see https://sass-lang.com/d/mixed-decls
+// 3. Alma's stylelint-config is not yet ready to force blockless mixin calls to come after declarations (see 2.).
 
 @use '@tokens' as tokens;
 @use '../tools/typography';
@@ -24,6 +25,7 @@
 #cc-main .pm__title {
     margin-right: tokens.$space-500;
 
+    // stylelint-disable-next-line order/order -- 3.
     @include typography.generate(tokens.$heading-small-bold); // 2.
 }
 

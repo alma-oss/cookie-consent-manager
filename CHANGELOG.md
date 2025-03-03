@@ -1,62 +1,5 @@
-<a name="3.0.0-beta.0"></a>
-# [3.0.0-beta.0](https://github.com/alma-oss/cookie-consent-manager/compare/3.0.0-alpha.1...3.0.0-beta.0) (2025-02-27)
-
-### BREAKING CHANGES
-
-- Update Spirit design tokens to v3 ([18e4f8b](https://github.com/alma-oss/cookie-consent-manager/commit/18e4f8b))
-
-### Dependencies
-
-- Temporarily froze stylelint config version ([4810595](https://github.com/alma-oss/cookie-consent-manager/commit/4810595))
-- Update actions/setup-node digest to 1d0ff46 ([23e2909](https://github.com/alma-oss/cookie-consent-manager/commit/23e2909))
-- Update all dev dependencies ([5bdde4c](https://github.com/alma-oss/cookie-consent-manager/commit/5bdde4c))
-- Update all dev dependencies ([d48f1dd](https://github.com/alma-oss/cookie-consent-manager/commit/d48f1dd))
-- Update dependency vanilla-cookieconsent to v3.1.0 ([abebff4](https://github.com/alma-oss/cookie-consent-manager/commit/abebff4))
-
-### Documentation
-
-- Sort languages in docs by their name, not code ([ddd86e5](https://github.com/alma-oss/cookie-consent-manager/commit/ddd86e5))
-- Update README header to clearly states affiliation of the library ([6eb71e4](https://github.com/alma-oss/cookie-consent-manager/commit/6eb71e4))
-
-### Features
-
-- Add French (fr) translation ([97073c0](https://github.com/alma-oss/cookie-consent-manager/commit/97073c0))
-- Add Portuguese (pt) translation ([7deb4bf](https://github.com/alma-oss/cookie-consent-manager/commit/7deb4bf))
-- Add Romanian (ro) translation ([cc16614](https://github.com/alma-oss/cookie-consent-manager/commit/cc16614))
-- Add Serbian (sr) translation ([3cd805c](https://github.com/alma-oss/cookie-consent-manager/commit/3cd805c))
-- Add Spanish (es) translation ([84e5205](https://github.com/alma-oss/cookie-consent-manager/commit/84e5205))
-- Submit consent language to consent collector (fixes [#387](https://github.com/alma-oss/cookie-consent-manager/issues/387)) ([d5a0eb0](https://github.com/alma-oss/cookie-consent-manager/commit/d5a0eb0))
-
-
-<a name="3.0.0-alpha.1"></a>
-# [3.0.0-alpha.1](https://github.com/alma-oss/cookie-consent-manager/compare/3.0.0-alpha.0...3.0.0-alpha.1) (2025-01-23)
-
-### Dependencies
-
-- Update all dev dependencies ([5852b50](https://github.com/alma-oss/cookie-consent-manager/commit/5852b50))
-- Update dependency vite to v6.0.9 [SECURITY] ([f3d9b4a](https://github.com/alma-oss/cookie-consent-manager/commit/f3d9b4a))
-
-### Documentation
-
-- Add catalog info for Backstage ([69f9bdd](https://github.com/alma-oss/cookie-consent-manager/commit/69f9bdd))
-- Add link to consumed API into catalog-info ([2c3d5f1](https://github.com/alma-oss/cookie-consent-manager/commit/2c3d5f1))
-- Add UPGRADE guide for version 3 ([c45b2fa](https://github.com/alma-oss/cookie-consent-manager/commit/c45b2fa))
-- Update version reference in readme ([8666483](https://github.com/alma-oss/cookie-consent-manager/commit/8666483))
-
-### Features
-
-- Use new default consentCollectorApiUrl with a new resource type ([99a9b2e](https://github.com/alma-oss/cookie-consent-manager/commit/99a9b2e))
-
-### Chores
-
-- Change base branch for Renovate updates back to `main` ([c5f5455](https://github.com/alma-oss/cookie-consent-manager/commit/c5f5455))
-- Move repository from lmc-eu to alma-oss ([0beb8e0](https://github.com/alma-oss/cookie-consent-manager/commit/0beb8e0))
-- Replace auto-assign github action ([a43aa6d](https://github.com/alma-oss/cookie-consent-manager/commit/a43aa6d))
-- Update codeowners ([6d3a1c2](https://github.com/alma-oss/cookie-consent-manager/commit/6d3a1c2))
-
-
-<a name="3.0.0-alpha.0"></a>
-# [3.0.0-alpha.0](https://github.com/alma-oss/cookie-consent-manager/compare/2.6.0...3.0.0-alpha.0) (2025-01-13)
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/alma-oss/cookie-consent-manager/compare/2.6.0...3.0.0) (2025-03-03)
 
 ### BREAKING CHANGES
 
@@ -67,6 +10,7 @@
 - Rename callbacks to match names from the vanilla-cookieconsent ([77160a2](https://github.com/alma-oss/cookie-consent-manager/commit/77160a2))
 - Rename LmcCookieConsentManager to CookieConsentManager (part of [#392](https://github.com/alma-oss/cookie-consent-manager/issues/392)) ([bfc1ddf](https://github.com/alma-oss/cookie-consent-manager/commit/bfc1ddf))
 - Rename settingsModalMoreInfo to preferencesModalMoreInfo ([8f88088](https://github.com/alma-oss/cookie-consent-manager/commit/8f88088))
+- Update Spirit design tokens to v3 ([18e4f8b](https://github.com/alma-oss/cookie-consent-manager/commit/18e4f8b))
 - Use named exports only ([23b9a1d](https://github.com/alma-oss/cookie-consent-manager/commit/23b9a1d))
 
 ### Code Refactoring
@@ -85,32 +29,53 @@
 
 ### Dependencies
 
-- Update all dependencies and subdependencies
+- Update dependency vanilla-cookieconsent to v3.1.0 ([abebff4](https://github.com/alma-oss/cookie-consent-manager/commit/abebff4))
+- Update dependency nanoid to v5.0.9 [SECURITY] ([1026781](https://github.com/alma-oss/cookie-consent-manager/commit/1026781))
 - Downgrade and lock conventional-changelog-cli on v3 ([66c82d7](https://github.com/alma-oss/cookie-consent-manager/commit/66c82d7))
+- Migrate config renovate.json ([c6a4f66](https://github.com/alma-oss/cookie-consent-manager/commit/c6a4f66))
 - Replace unmaintained npm-run-all ([13a9899](https://github.com/alma-oss/cookie-consent-manager/commit/13a9899))
-- Update dependency vanilla-cookieconsent to v3 ([32aa081](https://github.com/alma-oss/cookie-consent-manager/commit/32aa081))
-- Update nanoid to version 5 ([0f8a131](https://github.com/alma-oss/cookie-consent-manager/commit/0f8a131))
-- Update stylelint and switch to the latest @almacareer/stylelint-config rules ([227ae39](https://github.com/alma-oss/cookie-consent-manager/commit/227ae39))
+- Update all (sub)dependencies and all dev dependencies
 
 ### Documentation
 
+- Add catalog info for Backstage ([69f9bdd](https://github.com/alma-oss/cookie-consent-manager/commit/69f9bdd))
+- Add link to consumed API into catalog-info ([2c3d5f1](https://github.com/alma-oss/cookie-consent-manager/commit/2c3d5f1))
+- Add UPGRADE guide for version 3 ([c45b2fa](https://github.com/alma-oss/cookie-consent-manager/commit/c45b2fa))
 - Add upgrade guide placeholder ([8056d04](https://github.com/alma-oss/cookie-consent-manager/commit/8056d04))
 - Clarify GTM management by Alma Career Central ([c863589](https://github.com/alma-oss/cookie-consent-manager/commit/c863589))
+- Fix link rendering in UPGRADE guide ([e39dc3c](https://github.com/alma-oss/cookie-consent-manager/commit/e39dc3c))
+- Redesign docs using Spirit Design System ([07cee6e](https://github.com/alma-oss/cookie-consent-manager/commit/07cee6e))
+- Sort languages in docs by their name, not code ([ddd86e5](https://github.com/alma-oss/cookie-consent-manager/commit/ddd86e5))
 - Update contacts in package.json ([dca097a](https://github.com/alma-oss/cookie-consent-manager/commit/dca097a))
 - Update example builds to match vanilla-cookieconsent v3 ([cf95e7e](https://github.com/alma-oss/cookie-consent-manager/commit/cf95e7e))
 - Update examples to new API ([99e6af4](https://github.com/alma-oss/cookie-consent-manager/commit/99e6af4))
+- Update README header to clearly states affiliation of the library ([6eb71e4](https://github.com/alma-oss/cookie-consent-manager/commit/6eb71e4))
 - Update README to version 3 changes ([1951362](https://github.com/alma-oss/cookie-consent-manager/commit/1951362))
+- Update version reference in readme ([8666483](https://github.com/alma-oss/cookie-consent-manager/commit/8666483))
 
 ### Features
 
+- Add French (fr) translation ([97073c0](https://github.com/alma-oss/cookie-consent-manager/commit/97073c0))
+- Add Portuguese (pt) translation ([7deb4bf](https://github.com/alma-oss/cookie-consent-manager/commit/7deb4bf))
+- Add Romanian (ro) translation ([cc16614](https://github.com/alma-oss/cookie-consent-manager/commit/cc16614))
+- Add Serbian (sr) translation ([3cd805c](https://github.com/alma-oss/cookie-consent-manager/commit/3cd805c))
+- Add Spanish (es) translation ([84e5205](https://github.com/alma-oss/cookie-consent-manager/commit/84e5205))
+- Submit consent language to consent collector (fixes [#387](https://github.com/alma-oss/cookie-consent-manager/issues/387)) ([d5a0eb0](https://github.com/alma-oss/cookie-consent-manager/commit/d5a0eb0))
 - Use deep merge for config overwrites (fixes [#385](https://github.com/alma-oss/cookie-consent-manager/issues/385)) ([c0b8bba](https://github.com/alma-oss/cookie-consent-manager/commit/c0b8bba))
+- Use new default consentCollectorApiUrl with a new resource type ([99a9b2e](https://github.com/alma-oss/cookie-consent-manager/commit/99a9b2e))
 
 ### Chores
 
+- Do not publish npm to beta tag ([54aa329](https://github.com/alma-oss/cookie-consent-manager/commit/54aa329))
+- Fix disabling commit hooks on CI ([a3ea991](https://github.com/alma-oss/cookie-consent-manager/commit/a3ea991))
+- Change base branch for Renovate updates back to `main` ([c5f5455](https://github.com/alma-oss/cookie-consent-manager/commit/c5f5455))
 - Lock eslint ^8 for renovate bot ([5b94ff6](https://github.com/alma-oss/cookie-consent-manager/commit/5b94ff6))
+- Move repository from lmc-eu to alma-oss ([0beb8e0](https://github.com/alma-oss/cookie-consent-manager/commit/0beb8e0))
+- Replace auto-assign github action ([a43aa6d](https://github.com/alma-oss/cookie-consent-manager/commit/a43aa6d))
 - Replace node 16 with node 18 in gh actions builds ([6daf9ba](https://github.com/alma-oss/cookie-consent-manager/commit/6daf9ba))
 - Setup github-actions packages updates using renovate bot ([718ada8](https://github.com/alma-oss/cookie-consent-manager/commit/718ada8))
 - Switch from `sass` to `sass-embedded` ([09d9f8b](https://github.com/alma-oss/cookie-consent-manager/commit/09d9f8b))
+- Update codeowners ([6d3a1c2](https://github.com/alma-oss/cookie-consent-manager/commit/6d3a1c2))
 - Update version replace script to ESM ([970d6ac](https://github.com/alma-oss/cookie-consent-manager/commit/970d6ac))
 
 

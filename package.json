@@ -1,6 +1,6 @@
 {
   "name": "@almacareer/cookie-consent-manager",
-  "version": "3.0.0-beta.0",
+  "version": "3.0.0",
   "description": "Cookie Consent Manager mainly for Alma Career products",
   "keywords": [
     "alma-career",
