@@ -1,6 +1,9 @@
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/alma-oss/cookie-consent-manager/compare/2.6.0...3.0.0) (2025-03-03)
 
+> [!NOTE]
+> For detailed upgrade instructions to version 3.0, please refer to the [upgrade guide](UPGRADE-3.0.md).
+
 ### BREAKING CHANGES
 
 - Change default cookie name from `lmc_ccm` to `almacareer_ccm` ([bd12817](https://github.com/alma-oss/cookie-consent-manager/commit/bd12817))
