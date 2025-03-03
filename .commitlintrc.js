@@ -1,3 +1,3 @@
 export default {
-  extends: ['@lmc-eu/commitlint-config'],
+  extends: ['@almacareer/commitlint-config'],
 };
