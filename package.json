@@ -17,9 +17,9 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./CookieConsentManager.d.ts",
       "import": "./CookieConsentManager.js",
-      "default": "./CookieConsentManager.js",
-      "types": "./CookieConsentManager.d.ts"
+      "default": "./CookieConsentManager.js"
     }
   },
   "repository": {
