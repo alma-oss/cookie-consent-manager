@@ -32,6 +32,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish
-        run: cd ./dist && yarn publish --tag beta
+        run: cd ./dist && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
