@@ -1,3 +1,3 @@
-module.exports = {
+export default {
   extends: ['@lmc-eu/commitlint-config'],
 };
