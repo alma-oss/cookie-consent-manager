@@ -6,7 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: alma-oss/cookie-consent-manager
 spec:
-  owner: user:default/ondrej.machulda
+  owner: user:default/petr.chromec
   type: library
   lifecycle: production
   dependsOn:
