@@ -87,7 +87,7 @@
     "@almacareer/stylelint-config": "9.1.0",
     "@babel/core": "7.26.9",
     "@babel/preset-env": "7.26.9",
-    "@commitlint/cli": "19.7.1",
+    "@commitlint/cli": "19.8.0",
     "@lmc-eu/browserslist-config": "2.0.1",
     "@lmc-eu/commitlint-config": "2.0.3",
     "@lmc-eu/conventional-changelog-lmc-github": "3.0.3",
