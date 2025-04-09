@@ -22,11 +22,6 @@ export default defineConfig({
           format: 'es',
           entryFileNames: '[name].js',
         },
-        {
-          name: 'CookieConsentManager',
-          format: 'iife',
-          entryFileNames: '[name].js',
-        },
       ],
     },
   },
