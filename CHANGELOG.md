@@ -1,3 +1,22 @@
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/alma-oss/cookie-consent-manager/compare/3.0.0...3.0.1) (2025-04-10)
+
+### Bug Fixes
+
+- Remove IIFE export from library build configuration ([197fc3d](https://github.com/alma-oss/cookie-consent-manager/commit/197fc3d))
+
+### Chores
+
+- Remove myself from codeowners 👋 ([3414fb1](https://github.com/alma-oss/cookie-consent-manager/commit/3414fb1))
+- Replace internal project owner 💨 ([cc2a034](https://github.com/alma-oss/cookie-consent-manager/commit/cc2a034))
+- Use alma's sharable preset for renovate ([69aa74f](https://github.com/alma-oss/cookie-consent-manager/commit/69aa74f))
+
+### Documentation
+
+- Add language to cookie contents example ([52424a2](https://github.com/alma-oss/cookie-consent-manager/commit/52424a2))
+- Add link to upgrade guide to changelog ([f7a90b9](https://github.com/alma-oss/cookie-consent-manager/commit/f7a90b9))
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/alma-oss/cookie-consent-manager/compare/2.6.0...3.0.0) (2025-03-03)
 
