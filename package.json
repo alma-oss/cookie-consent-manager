@@ -17,11 +17,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./CookieConsentManager.js",
-      "default": "./CookieConsentManager.js"
+      "import": {
+        "types": "./CookieConsentManager.d.ts",
+        "default": "./CookieConsentManager.js"
+      }
     }
   },
-  "types": "./CookieConsentManager.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/alma-oss/cookie-consent-manager.git"
