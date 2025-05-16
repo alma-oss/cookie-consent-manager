@@ -23,6 +23,13 @@
       "matchManagers": ["npm"],
       "matchPackageNames": ["conventional-changelog-cli"],
       "allowedVersions": "^3"
+    },
+    {
+      "groupName": "Freeze npm-run-all2 on ^7",
+      "description": "Lock npm-run-all2 on ^7 until Node.js 20 is used on CI",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["npm-run-all2"],
+      "allowedVersions": "^7"
     }
   ]
 }
