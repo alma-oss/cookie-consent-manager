@@ -1,7 +1,7 @@
 {
   "ignorePatterns": [
     {
-      "pattern": "^https://github.com/alma-oss/cookie-consent-manager/(pull|issues|commit)/"
+      "pattern": "^https://github.com/(alma-oss|lmc-eu)/cookie-consent-manager/(pull|issues|commit)/"
     },
     {
       "pattern": "^https://jira.int.lmc.cz/"
