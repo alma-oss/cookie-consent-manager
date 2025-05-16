@@ -2,7 +2,7 @@
 Release 3.0 includes many backward-incompatible changes, including changes in the underlying vanilla-cookieconsent library,
 which has also been upgraded from version 2 to 3.
 
-This guide summarizes relevant changes in both `@almacareer/cookie-consent` and
+This guide summarizes relevant changes in both `@almacareer/cookie-consent-manager` and
 [`vanilla-cookieconsent`](https://github.com/orestbida/cookieconsent) library to help you upgrade your codebase.
 
 ## Library npm scope changed to `@almacareer`
@@ -12,8 +12,8 @@ The library has been moved from `@lmc-eu` to `@almacareer` npm organization.
 If you use the library via npm, update your package.json file
 
 ```diff
--"@lmc-eu/cookie-consent": "^2.6.0"
-+"@almacareer/cookie-consent": "^3.0.0"
+-"@lmc-eu/cookie-consent-manager": "^2.6.0"
++"@almacareer/cookie-consent-manager": "^3.0.0"
 ```
 
 If you use the library via CDN, update the URL to styles and script:
