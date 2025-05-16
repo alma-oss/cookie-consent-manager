@@ -8,6 +8,9 @@
     },
     {
       "pattern": "^http://localhost"
+    },
+    {
+      "pattern": "spirit-design-token@0.4.1"
     }
   ]
 }
