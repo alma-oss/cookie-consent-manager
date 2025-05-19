@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - uses: tcort/github-action-markdown-link-check@75e8eff79b17a74255f5d39b8e8fe66b9ce891f6 # v1.1.0
+      - uses: tcort/github-action-markdown-link-check@a800ad5f1c35bf61987946fd31c15726a1c9f2ba # v1.1.0
         with:
           use-verbose-mode: 'yes'
           config-file: '.github/markdown-link-check-config.json'
