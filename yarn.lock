@@ -1746,9 +1746,9 @@
   integrity sha512-kkLTgPKcHL/N7fylhKImfOkxhCmB4uQBfroF3z0+O8qHO4qDZ/KnDGidtdgE4gqfpC/ShFtx1JZINyzCVyMi1g==
 
 "@lmc-eu/spirit-design-tokens@^3.0.2":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-3.4.0.tgz#be0e7f9ac157738a98092290ba2d1730a62ff471"
-  integrity sha512-bKTdEI19sxSty8zFgz5MnzRmzvo/V9FToI9PLMF7ViGnhnZePRJdJ5D1bu/30eJYlkL1f0SgbCNnEUazCrTW9w==
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-3.5.0.tgz#0397113215104f2289d5ed4895548d1108d287e9"
+  integrity sha512-ox5EGSstAr0a4lAtUUl3T55PA/TiviLQy9pHp+G/cgmTWX8T4nkIJ/COSQYGsmzyDwsOnxteiMXVXq/PQQnruA==
 
 "@microsoft/api-extractor-model@7.30.3":
   version "7.30.3"
